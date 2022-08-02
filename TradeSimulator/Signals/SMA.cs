@@ -7,12 +7,14 @@ using TradeSimulator.Data;
 
 namespace TradeSimulator.Signals
 {
-    public class SMA200
+    public class SMA
     {
-        public static void Generate()
+        public static void Generate(int smaValue, int arrayPos)
         {
-            int smaValue = 200;
-            int arrayPos = 8;
+
+            //Simple moving average - smaValue is the timeframe
+
+
             System.IFormatProvider cultureUS = new System.Globalization.CultureInfo("en-US");
             var fileLength = BaseDataBuilder.fileLength;
             int arraySequence = smaValue - 1;

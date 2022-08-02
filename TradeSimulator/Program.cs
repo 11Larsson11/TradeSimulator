@@ -1,4 +1,6 @@
-﻿
+﻿using TradeSimulator.Data;
+using TradeSimulator.Signals;
+using TradeSimulator.TradingModels;
 
 namespace TradeSimulator
 {
@@ -6,15 +8,19 @@ namespace TradeSimulator
     {
         public static void Main()
         {
+
+
             string afry = (@"\Users\richa\OneDrive\Documents\Textfiler\AFRY.txt");
 
+            //Data obtained from Yahoo Finance, historical data ( saved as .txt-file )
 
-            Data.BaseDataBuilder.BaseValues(afry);
 
-            Signals.SMA50.Generate();
-            Signals.SMA200.Generate();
-            
+            BaseDataBuilder.BaseValues(afry);
 
+            SMA.Generate(20,7);
+            SMA.Generate(50,8);
+
+            Crossover.Generate();
 
 
 
